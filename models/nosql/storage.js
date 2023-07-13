@@ -16,4 +16,4 @@ const StorageSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('storage', StorageSchema) // user: nombre de la coleccion
+module.exports = mongoose.model('storage', StorageSchema) // user: nombre de la coleccion en la base de datos
