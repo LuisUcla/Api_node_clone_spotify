@@ -5,8 +5,16 @@ const dbConnect = require('./config/mongo')
 const app = express();
 
 app.use(cors());
+app.use(express.json()); // cuando se hace el controlador
+app.use(express.static('storage')); // para ver los archivos estaticos en el navegador
 
 const port = process.env.PORT || 3000; // usa la variable de entorno
+
+
+// Routes
+
+app.use('/api', require('./routes'))
+
 
 app.listen(port, () => {
     console.log('app en el puerto http://localhost' + port)
