@@ -23,11 +23,12 @@ const registerCtrl = async (req, res) => {
    }
 }
 
+// login del usuario
 const loginCtrl = async (req, res) => {
     try {
         req = matchedData(req); // limpia la data
         const user = await userModel.findOne({ email: req.email })
-        .select('password email name role');
+        .select('password email name role'); // se usa en db no relacionales
         if (!user) {
             handleHttpError(res, 'USER_NO_EXIST', 404) // si el usuario no existe
             return;
