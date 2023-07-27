@@ -1,10 +1,13 @@
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET
 
+const getProperties = require('../utils/handlePropertiesEngine');
+const propertiesKeys = getProperties();
+
 const tokenSign = async (user) => {
     const sign = jwt.sign(
         {
-            _id: user._id,
+            [propertiesKeys.id]: user[propertiesKeys.id],
             role: user.role
         },
         JWT_SECRET,
