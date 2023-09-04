@@ -7,7 +7,7 @@ const dbConnect = () => {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(() => {
-        console.log('**** CONEXION CORRECTA **** ')
+        console.log('**** CONEXION MONGODB CORRECTA **** ')
     }).catch(() => {
         console.log('**** ERROR DE CONEXION ****')
     });

@@ -24,7 +24,7 @@ app.use('/api', require('./routes'))
 
 
 app.listen(port, () => {
-    console.log('app en el puerto http://localhost' + port)
+    console.log('app en el puerto http://localhost:' + port)
 });
 
-(ENGINE_DB === 'nosql') ? dbConnect() : dbConnectMySql();
+dbConnect();
