@@ -8,7 +8,7 @@ const getProperties = () => {
             id: 'id'
         }
     }
-    return data[ENGINE_DB];
+    return data;
 }
 
 module.exports = getProperties;
